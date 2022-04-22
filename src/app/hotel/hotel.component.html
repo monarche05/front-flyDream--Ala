@@ -1,0 +1,34 @@
+<article>
+  <div>
+    <h2>
+      Hotel name :<br />
+      {{ name }} <br />
+    </h2>
+    <div class="logo">
+      <img src="{{ img }}" alt="" />
+    </div>
+  </div>
+  <div>
+    <p>
+      The hotel Adresse :
+      {{ addr }}
+    </p>
+  </div>
+  <div>
+    <button (click)="callTaxi()">Call taxi (Appelle du taxi)</button>
+  </div>
+  <div>
+    <button (click)="showTaxi()">
+      Show taxi state (Vérifier disponibilitée)
+    </button>
+  </div>
+  <div>
+    <button (click)="freeTaxi()">
+      free taxi state (Taxi de nouveau disponible)
+    </button>
+  </div>
+  <div>
+    <app-music></app-music>
+  </div>
+  ---------------------------------------
+</article>

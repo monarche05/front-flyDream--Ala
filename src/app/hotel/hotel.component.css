@@ -1,0 +1,46 @@
+button {
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(34, 180, 100);
+  padding: 10px 25px;
+  margin: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  min-width: 400px;
+}
+button:hover {
+  background-color: rgb(16, 70, 131);
+  transition: 0.3s;
+}
+article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: lightblue;
+  margin: auto;
+  padding: 10px;
+  width: 100%;
+}
+h2 {
+  font-size: 25px;
+  width: 100%;
+  background-color: lightcyan;
+  padding: 5px 20px;
+  text-align: center;
+}
+p {
+  font-size: 20px;
+}
+img {
+  width: 100px;
+  height: 100px;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
