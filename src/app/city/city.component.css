@@ -1,10 +1,6 @@
 body {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
   margin: 0;
   padding: 0;
-  justify-content: center;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 div {
@@ -13,4 +9,5 @@ div {
 }
 .card {
   display: flex;
+  justify-content: center;
 }

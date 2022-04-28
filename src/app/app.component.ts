@@ -1,53 +1,46 @@
 import { Component } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import { Observable } from 'rxjs';
+import { TaxiService } from './services/taxi.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor(private httpClient: HttpClient) {}
-  url = environment.url;
-  title = 'front-flyDream';
+  constructor(private taxiService: TaxiService) {}
 
-  getHelloWorld() {
-    const headers = {
-      headers: new HttpHeaders({
-        'Access-Control-Allow-Origin': '*',
-      }),
-    };
-    const res = this.httpClient
-      .get(environment.url, headers)
-      .subscribe((data) => {
-        alert(data);
-      });
+  obsTest() {
+    console.log('just before subscribe');
+    this.taxiService.getObs().subscribe({
+      next(x) {
+        console.log('got value ' + x);
+      },
+      error(err) {
+        console.error('something wrong occurred: ' + err);
+      },
+      complete() {
+        console.log('done');
+      },
+    });
+    console.log('just after subscribe');
   }
 
-  //getHelloWorld2() est une fonction de teste
-  // associé à un deuxiéme bouton  hors live pour
-  // trouver l'erreurs:
-  //   Access to XMLHttpRequest at
-  //  'http://localhost:3000/' from origin 'http://localhost:4200'
-  //   has been blocked by CORS policy:
-  //   Response to preflight request doesn't pass access
-  //   control check: No 'Access-Control-Allow-Origin'
-  //   header is present on the requested resource.
+  // constructor(private httpClient: HttpClient) {}
+  // url = environment.url;
+  // title = 'front-flyDream';
 
-  getHelloWorld2() {
-    const headers = {
-      headers: new HttpHeaders({
-        'Acces-Controle-Allow-Headers': 'Accepte, Content-Type',
-        'Access-Control-Allow-Origin': 'http://localhost:3000',
-        'Access-Control-Allow-Methodes': 'GET ,POST , PUT, DELETE, OPTIONS',
-      }),
-    };
-
-    const res = this.httpClient
-      .get(environment.url, headers)
-      .subscribe((data) => {
-        alert(data);
-      });
-  }
+  // getHelloWorld() {
+  //   const headers = {
+  //     headers: new HttpHeaders({
+  //       'Access-Control-Allow-Origin': '*',
+  //     }),
+  //   };
+  //   const res = this.httpClient.get(environment.url).subscribe((data) => {
+  //     const result = JSON.stringify(data);
+  //     console.log(typeof data);
+  //     console.log(data);
+  //   });
+  // }
 }
