@@ -1,0 +1,35 @@
+.header_background {
+  background-color: rgb(74, 142, 184);
+  position: sticky;
+  top: 0;
+}
+.header_content--position {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.header_content--title {
+  margin: 0 25px;
+}
+.header_text--title {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 28px;
+  margin: 0;
+  color: aliceblue;
+}
+.header_buttons--position {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.header_buttons {
+  margin: 5px 10px;
+  background-color: aliceblue;
+  font-size: 18px;
+}
+.header_icone {
+  align-items: center;
+  vertical-align: center;
+  padding: 0 5px 5px 0;
+}
